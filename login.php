@@ -27,7 +27,7 @@ include("includes/db.php");
 if (isset($_POST['login'])) {
     $email = mysqli_real_escape_string($con,$_POST['email']);
     $pass = mysqli_real_escape_string($con,$_POST['pass']);
-    $get_admin = "SELECT * FROM admin WHERE email='$email' AND pwd='$pass'";
+    $get_admin = "SELECT * FROM users WHERE email='$email' AND pwd='$pass'";
     $run_admin = mysqli_query($con, $get_admin);
     $count = mysqli_num_rows($run_admin);
     if ($count==1) {
@@ -41,6 +41,9 @@ if (isset($_POST['login'])) {
         echo "<script>alert('Email or Password is Wrong!')</script>";
     }
 }
+// if (isset($_POST['register'])) {
+//     echo"<script>window.open('register.php','_self')</script>";
+// }
 
 ?>
 <!DOCTYPE html>
@@ -61,14 +64,21 @@ if (isset($_POST['login'])) {
     </div>
     <div class="col-lg-8" style="text-align:center"><!-- container begin -->
         <form action="" class="well" method="post"><!-- form begin -->
-            <h2 class="form-login-heading text-center"> Admin Login </h2>
+            <h2 class="form-login-heading text-center"> Login Page </h2>
             <br>
             <input type="text" class="form-control" placeholder="Email Address" name="email" required>
             <br>
             <input type="password" class="form-control" placeholder="Your Password" name="pass" required>
             <br>
+            
+            <a href="register.php"> New User?   <button class="btn btn-primary" type="button" name="register">register</button> </a> 
             <button class="btn btn-primary" type="submit" name="login">Login</button>
+            
         </form><!-- form finish -->
     </div><!-- container finish --> 
+    <div>
+            </div>
+          
+
 </body>
 </html>

@@ -13,6 +13,8 @@ else{
     $run_admin = mysqli_query($con,$get_admin);
     $row_admin = mysqli_fetch_array($run_admin);
     $nickname = $row_admin['nickname'];
+    $role = $row_admin['role'];
+    $id = $row_admin['id'];
 
 ?>
 <!DOCTYPE html>
@@ -35,9 +37,7 @@ else{
        
         <div id="page-wrapper"><!-- #page-wrapper begin, the funciton area is here -->
             <div class="container-fluid"><!-- using container-fluid to gain the max width. include the function part file -->
-                
                 <?php
-    
                 if (isset($_GET['dashboard'])) {
                     include("includes/dashboard.php");
                 }  
@@ -45,8 +45,17 @@ else{
                     $target = explode('#', $_GET['category'])[0];
                     include("category/$target.php");
                 }  
-
-
+                elseif (isset($_GET['register'])) {
+                    echo "dd";
+                    include("register.php");
+                }
+                elseif (isset($_GET['product']) && $role == "shop owner") {
+                    $target = explode('#', $_GET['product'])[0];
+                    include("product/$target.php");
+                } 
+                elseif (isset($_GET['product'])&& $role !="shop owner") {
+                    echo "<script>alert('You do not have this right!')</script>";
+                }
                 ?>
                 
             </div><!-- container-fluid finish -->

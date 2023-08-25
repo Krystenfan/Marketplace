@@ -27,7 +27,7 @@ if (!isset($_SESSION['can302'])) {
                 <ul class="dropdown-menu">   <!-- dropdown-menu begin -->
                     <li> <!-- li begin -->
                         <a href="#"> <!-- a href begin -->
-                            <i class="fa fa-fw fa-user"></i> Profile
+                            <i class="fa fa-fw fa-user"></i> Profile 
                         </a>
                     </li><!-- li finish -->               
 
@@ -90,13 +90,13 @@ if (!isset($_SESSION['can302'])) {
                     </a><!-- a href finish -->
                     <ul id="products" class="collapse">                        <!-- collapse begin -->
                         <li>                            <!-- li begin -->
-                            <a href="#"> Insert Product </a>
+                            <a href="index.php?product=add"> Insert Product </a>
                         </li><!-- li finish -->
                         <li>                            <!-- li begin -->
-                            <a href="#"> View Products </a>
+                            <a href="index.php?product=view"> View Products </a>
                         </li><!-- li finish -->
                         <li>  <!-- li begin -->
-                            <a href="#"> View Statistics </a>
+                            <a href="index.php?product=statistics"> View Statistics </a>
                         </li><!-- li finish -->
                     </ul><!-- collapse finish -->
                 </li><!-- li finish -->
