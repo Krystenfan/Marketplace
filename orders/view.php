@@ -26,7 +26,6 @@ else{
 					<table class="table table-hover table-striped table-bordered">						
 						<thead>
 							<tr>
-								<th> ID </th>
 								<th> Name </th>
 								<th> Amount </th>
 								<th> Operation </th>
@@ -36,21 +35,22 @@ else{
 							<?php
 								$get_p_cats = "select * from product_category order by amount";
 								$run_p_cats = mysqli_query($con,$get_p_cats);
-								while ($row_p_cats = mysqli_fetch_array($run_p_cats)) {
-									$p_cat_id = $row_p_cats['id'];
-									$p_cat_name = $row_p_cats['name'];
-									$p_cat_amount = $row_p_cats['amount'];
+								if($run_p_cats!=false || $run_p_cats!=true )
+									while ($row_p_cats = mysqli_fetch_array($run_p_cats)) {
+										$p_cat_name = $row_p_cats['name'];
+										$p_cat_amount = $row_p_cats['amount'];
+								
+								
 							?>
 							<tr>
-								<td><?php echo $p_cat_id; ?></td>
 								<td><?php echo $p_cat_name; ?></td>
 								<td width="300"><?php echo $p_cat_amount; ?></td>
 								<td>
-								    <a href="index.php?category=edit&id=<?php echo $p_cat_id; ?>">
+								    <a href="index.php?category=edit&name=<?php echo $p_cat_name; ?>">
 									<i class="fa fa-pencil"></i> Edit
 								    </a>
 								    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								    <a href="index.php?category=delete&id=<?php echo $p_cat_id; ?>">
+								    <a href="index.php?category=delete&name=<?php echo $p_cat_name; ?>">
 									<i class="fa fa-trash-o"></i> Delete
 								    </a>
 								</td>

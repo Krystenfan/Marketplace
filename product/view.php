@@ -1,10 +1,8 @@
 <?php
-
 if (!isset($_SESSION['can302'])) {
     echo "<script>window.open('login.php','_self')</script>";
 }
 else{
-
 ?>
 <div class="row"><!-- row Begin -->
 	<div class="col-lg-12"><!-- col-lg-12 begin -->
@@ -30,54 +28,49 @@ else{
 					<table class="table table-striped table-bordered table-hover"><!-- table begin -->
 						<thead>
 							<tr>
-								<th>ID:</th>
-								<th>Name:</th>
-								<th>Image:</th>
-								<th>address:</th>
-								<th>Owner:</th>
-								<th>type:</th>
-								<th>Operation:</th>
+								<th>ID</th>
+								<th>Name</th>
+								<th>Image</th>
+								<th>Price</th>
+								<th>Stock</th>
+								<th>Category</th>
+								<th>Operation</th>
 							</tr>
 						</thead>
 						<tbody>
 							<?php
-								// $get_pro = "SELECT p.*, c.name as c_name FROM product p INNER JOIN product_category c ON p.cat_id = c.id";
-                                // if (isset($_GET['cat_id'])) {
-                                //     $cat_id = $_GET['cat_id'];
-                                //     $get_pro .=" WHERE p.cat_id='$cat_id'";
-                                // }
-								$get_pro = "SELECT * FROM product where ownerID = '$id' ";
+								$get_pro = "SELECT p.*, c.name as c_name FROM product p INNER JOIN product_category c ON p.cat_id = c.id";
+                                if (isset($_GET['cat_id'])) {
+                                    $cat_id = $_GET['cat_id'];
+                                    $get_pro .=" WHERE p.cat_id='$cat_id'";
+                                }
                                 $run_pro = mysqli_query($con,$get_pro);
-								if(mysqli_fetch_array($con,$run_pro)){
-									while ($row_pro = mysqli_fetch_array($run_pro)) {
-										$pro_id = $row_pro['id'];
-										$pro_type = $row_pro['type'];
-										$pro_name = $row_pro['name'];
-										$pro_image = $row_pro['image_path'];
-										$pro_address = $row_pro['address'];
-										$pro_ownerID = $row_pro['ownerID'];
-								 ?>
-								 <tr>
-									 <td><?php echo $pro_id; ?></td>
-									 <td><?php echo $pro_name; ?></td>
-									 <td><img src="<?php echo $pro_image; ?>" width="80" height="80"></td>
-									 <td><?php echo $pro_address; ?></td>
-									 <td><?php echo $pro_ownerID; ?></td>
-									 <td><?php echo $pro_type; ?></td>
-									 <td>
-										<a href="index.php?product=edit&id=<?php echo $pro_id; ?>">
-										<i class="fa fa-pencil"></i> Edit
-										</a>
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<a href="index.php?product=delete&id=<?php echo $pro_id; ?>">
-										<i class="fa fa-trash-o"></i> Delete
-										</a>
-									</td>
-								 </tr>
-								 <?php } 
-
-								}
-								?>
+								while ($row_pro = mysqli_fetch_array($run_pro)) {
+									$pro_id = $row_pro['id'];
+									$pro_category = $row_pro['c_name'];
+									$pro_name = $row_pro['name'];
+									$pro_image = $row_pro['image_path'];
+									$pro_price = $row_pro['price'];
+									$pro_stock = $row_pro['stock'];
+							 ?>
+							 <tr>
+                                 <td><?php echo $pro_id; ?></td>
+                                 <td><?php echo $pro_name; ?></td>
+                                 <td><img src="<?php echo $pro_image; ?>" width="80" height="80"></td>
+                                 <td><?php echo $pro_price; ?></td>
+                                 <td><?php echo $pro_stock; ?></td>
+                                 <td><?php echo $pro_category; ?></td>
+                                 <td>
+								    <a href="index.php?product=edit&id=<?php echo $pro_id; ?>">
+									<i class="fa fa-pencil"></i> Edit
+								    </a>
+								    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    <a href="index.php?product=delete&id=<?php echo $pro_id; ?>">
+									<i class="fa fa-trash-o"></i> Delete
+								    </a>
+								</td>
+							 </tr>
+							 <?php } ?>
 						</tbody>
 					</table><!-- table finish -->
 				</div><!-- table-responsive finish -->			
@@ -85,5 +78,4 @@ else{
 		</div><!-- panel panel-default finish -->
 	</div><!-- col-lg-12 finish -->
 </div><!-- row Finish -->
-
 <?php } ?>

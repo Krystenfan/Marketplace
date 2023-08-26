@@ -68,21 +68,7 @@ if (!isset($_SESSION['can302'])) {
                     </ul><!-- collapse finish -->
                 </li><!-- li finish -->
 
-                <li>                    <!-- li begin -->
-                    <a href="#" data-toggle="collapse" data-target="#supplier">                        <!-- a href begin -->
-                        <i class="fa fa-fw fa-globe"></i> Supplier
-                        <i class="fa fa-fw fa-caret-down"></i>
-                    </a><!-- a href finish -->
-                    <ul id="supplier" class="collapse">                        <!-- collapse begin -->
-                        <li>                            <!-- li begin -->
-                            <a href="#"> Insert Supplier </a>
-                        </li><!-- li finish -->
-                        <li>                            <!-- li begin -->
-                            <a href="#"> View Supplier </a>
-                        </li><!-- li finish -->
-                    </ul><!-- collapse finish -->
-                </li><!-- li finish -->
-                               
+                   
                 <li>    <!-- li begin, ###with sub-menus### -->
                     <a href="#" data-toggle="collapse" data-target="#products">    <!-- a href begin -->
                         <i class="fa fa-fw fa-cubes"></i> Products
@@ -98,51 +84,40 @@ if (!isset($_SESSION['can302'])) {
                         <li>  <!-- li begin -->
                             <a href="index.php?product=statistics"> View Statistics </a>
                         </li><!-- li finish -->
+                        
                     </ul><!-- collapse finish -->
                 </li><!-- li finish -->
-
-
-                <li>                    <!-- li begin -->
-                    <a href="#" data-toggle="collapse" data-target="#coupon">                        <!-- a href begin -->
-                        <i class="fa fa-fw fa-tag"></i> Coupon
-                        <i class="fa fa-fw fa-caret-down"></i>
-                    </a><!-- a href finish -->
-                    <ul id="coupon" class="collapse">                        <!-- collapse begin -->
-                        <li>                            <!-- li begin -->
-                            <a href="#"> Insert Coupon </a>
-                        </li><!-- li finish -->
-                        <li>                            <!-- li begin -->
-                            <a href="#"> View Coupon </a>
-                        </li><!-- li finish -->
-                    </ul><!-- collapse finish -->
-                </li><!-- li finish -->                
                 
-                <li>                    <!-- li begin -->
-                    <a href="#" data-toggle="collapse" data-target="#slides">                        <!-- a href begin -->
-                        <i class="fa fa-fw fa-gear"></i> Slides
-                        <i class="fa fa-fw fa-caret-down"></i>
-                    </a><!-- a href finish -->
-                    <ul id="slides" class="collapse">                        <!-- collapse begin -->
-                        <li>                            <!-- li begin -->
-                            <a href="#"> Insert Slide </a>
-                        </li><!-- li finish -->
-                        <li>                            <!-- li begin -->
-                            <a href="#"> View Slides </a>
-                        </li><!-- li finish -->
-                    </ul><!-- collapse finish -->
-                </li><!-- li finish -->
 
                 <li>                    <!-- li begin -->
                     <a href="#">                        <!-- a href begin -->
                         <i class="fa fa-fw fa-users"></i> View Customers
                     </a><!-- a href finish -->
                 </li><!-- li finish -->
-                
+
                 <li>                    <!-- li begin -->
-                    <a href="#">                        <!-- a href begin -->
-                        <i class="fa fa-fw fa-book"></i> View Orders
+                    <a href="#" data-toggle="collapse" data-target="#orders">    <!-- a href begin -->
+                        <i class="fa fa-fw fa-tasks"></i> View Orders
+                        <i class="fa fa-fw fa-caret-down"></i>
                     </a><!-- a href finish -->
+                    <ul id="orders" class="collapse">                        <!-- collapse begin -->
+                        <li>                            <!-- li begin -->
+                            <a href="index.php?orders=view"> View Oders </a>
+                        </li><!-- li finish -->
+                        <li>                            <!-- li begin -->
+                            <a href="index.php?orders=add"> Add Order  </a>
+                        </li><!-- li finish -->
+                        <li>                            <!-- li begin -->
+                            <a href="index.php?orders=edit"> Edit Orders </a>
+                        </li><!-- li finish -->
+                        <li>                            <!-- li begin -->
+                            <a href="index.php?orders=delete"> Delete Oders </a>
+                        </li><!-- li finish -->
+                    </ul><!-- collapse finish -->
                 </li><!-- li finish -->
+
+
+
 
                 <li>                    <!-- li begin -->
                     <a href="logout.php">                        <!-- a href begin -->

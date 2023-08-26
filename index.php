@@ -49,13 +49,17 @@ else{
                     echo "dd";
                     include("register.php");
                 }
-                elseif (isset($_GET['product']) && $role == "shop owner") {
+                elseif (isset($_GET['product']) && $role == "admin") {
                     $target = explode('#', $_GET['product'])[0];
                     include("product/$target.php");
                 } 
-                elseif (isset($_GET['product'])&& $role !="shop owner") {
+                elseif (isset($_GET['product'])&& $role !="admin") {
                     echo "<script>alert('You do not have this right!')</script>";
                 }
+                elseif (isset($_GET['orders'])) {
+                    $target = explode('#', $_GET['orders'])[0];
+                    include("orders/$target.php");
+                }  
                 ?>
                 
             </div><!-- container-fluid finish -->

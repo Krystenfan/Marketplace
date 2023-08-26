@@ -1,25 +1,4 @@
 
-<!-- // if (isset($_POST['register'])) {
-//     $email = $_POST['email'];
-//     $pass = $_POST['pass'];
-//     $sql = "INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`) VALUES (NULL, '".$first."', '".$last."', '".$email."')";
-//     $query = mysqli_query($con,$sql);
-        
-//     } 
-//     $get_admin = "SELECT * FROM admin WHERE email='$email' AND passwd='$pass'";
-//     $run_admin = mysqli_query($con, $get_admin);
-//     $count = mysqli_num_rows($run_admin);
-//     if ($count==1) {
-//         $_SESSION['can302'] = $email; 
-//         $row_admin = mysqli_fetch_array($run_admin);
-//         echo "<script>alert('Welcome ".$row_admin['nickname']."!')</script>";
-//         echo "<script>window.open('index.php','_self')</script>";
-//     }
-//     else{
-//         echo "<script>alert('Email or Password is Wrong!')</script>";
-//     }
-// } -->
-
 <?php
 
 session_start(); // magic word to start a session.
@@ -51,7 +30,7 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CAN302 Login Demo</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="/can302/styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="/can302/font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/can302/styles/style.css">

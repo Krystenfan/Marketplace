@@ -4,28 +4,26 @@ if (!isset($_SESSION['can302'])) {
     echo "<script>window.open('login.php','_self')</script>";
 }
 elseif (isset($_POST['update'])) {
-    $p_cat_id = $_POST['p_cat_id'];
     $p_cat_name = $_POST['p_cat_name'];
-    $p_cat_priority = $_POST['p_cat_priority'];
-    $update_p_cat = "update product_category set name='$p_cat_name', priority='$p_cat_priority' where id='$p_cat_id'";
+    $p_cat_amount = $_POST['p_cat_amount'];
+    $update_p_cat = "update product_category set amount='$p_cat_amount' where name='$p_cat_name'";
     $run_p_cat = mysqli_query($con,$update_p_cat);
     if ($run_p_cat) {
         echo "<script>alert('Product Category has been Updated.')</script>";
         echo "<script>window.open('index.php?category=view','_self')</script>";
     }
 }
-elseif (!isset($_GET['id'])) {
-        echo "<script>alert('Product Category ID is misssing.')</script>";
-        echo "<script>window.open('index.php?category=view','_self')</script>";
+elseif (!isset($_GET['name'])) {
+        echo "<script>alert('Product Category name is misssing.')</script>";
+        echo "<script>window.open('index.php?view_p_cats','_self')</script>";
 }
 else{
-    $edit_p_cat_id = $_GET['id'];
-    $edit_p_cat_query = "select * from product_category where id='$edit_p_cat_id'";
+    $edit_p_cat_name = $_GET['name'];
+    $edit_p_cat_query = "select * from product_category where name='$edit_p_cat_name'";
     $run_edit = mysqli_query($con,$edit_p_cat_query);
     $row_edit = mysqli_fetch_array($run_edit);
-    $p_cat_id = $row_edit['id'];
     $p_cat_name = $row_edit['name'];
-    $p_cat_priority = $row_edit['priority'];
+    $p_cat_amount = $row_edit['amount'];
 
 ?>
 
@@ -50,22 +48,16 @@ else{
 			<div class="panel-body"><!-- panel-body begin -->				
 				<form method="post" class="form-horizontal">					
 					<div class="form-group"><!-- form-group begin -->						
-						<label class="control-label col-md-3"> Name </label>
+						<label class="control-label col-md-3"> amount </label>
 						<div class="col-md-6"><!-- col-md-6 begin -->							
-							<input type="text" name="p_cat_name" class="form-control" value="<?php echo $p_cat_name; ?>">
-						</div><!-- col-md-6 finish -->
-					</div><!-- form-group finish -->
-					<div class="form-group"><!-- form-group begin -->						
-						<label class="control-label col-md-3"> Priority </label>
-						<div class="col-md-6"><!-- col-md-6 begin -->							
-							<input name="p_cat_priority" type="text" class="form-control" value="<?php echo $p_cat_priority; ?>">
+							<input name="p_cat_amount" type="text" class="form-control" value="<?php echo $p_cat_amount; ?>">
 						</div><!-- col-md-6 finish -->
 					</div><!-- form-group finish -->
 					<div class="form-group"><!-- form-group begin -->						
 						<label class="control-label col-md-3"> </label>
 						<div class="col-md-6"><!-- col-md-6 begin -->
 							<input type="submit" name="update" class="form-control btn btn-primary" value="Update">
-							<input type="hidden" name="p_cat_id" class="form-control" value="<?php echo $p_cat_id; ?>" >
+							<input type="hnameden" name="p_cat_name" class="form-control" value="<?php echo $p_cat_name; ?>" >
 						</div><!-- col-md-6 finish -->
 					</div><!-- form-group finish -->
 				</form>

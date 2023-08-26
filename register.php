@@ -83,7 +83,7 @@ if (isset($_POST['Create'])) {
             <br>
             <input type="password" class="form-control" placeholder="Corfirm Your Password" name="pass_" required>
             <br>
-            <input type="text" class="form-control" placeholder="Shop Owner or Customer" name="role" required>
+            <input type="text" class="form-control" placeholder="Administrator or Customer" name="role" required>
             <br>
             <input type="text" class="form-control" placeholder="Male or Female" name="gender" required>
             <br>

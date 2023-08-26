@@ -10,14 +10,8 @@ elseif(isset($_POST['add'])){
     $product_price = $_POST['product_price'];
     $product_stock = $_POST['product_stock'];
     
-    //copy the image files to target folder.
-    $exts = explode('.', $_FILES['product_img']['name']);
-    $product_img_path = "/can302/media/".time().".".end($exts);
-    $temp_name = $_FILES['product_img']['tmp_name'];
-    $store_path = $_SERVER['DOCUMENT_ROOT'].$product_img_path;
-    move_uploaded_file($temp_name, $store_path);
     
-    $insert_product = "insert into product (cat_id, name, description, image_path, price, stock) values ('$product_cat_id','$product_name', '$product_description', '$product_img_path', '$product_price', '$product_stock')";    
+    $insert_product = "insert into product (cat_id, name, description, price, stock) values ('$product_cat_id','$product_name', '$product_description', '$product_price', '$product_stock')";    
     echo $insert_product;
     $run_product = mysqli_query($con,$insert_product);
     if($run_product){
@@ -73,13 +67,6 @@ else {
                               }
                               ?>
                           </select><!-- form-control Finish -->                          
-                      </div><!-- col-md-6 Finish -->
-                   </div><!-- form-group Finish -->
-                   
-                   <div class="form-group"><!-- form-group Begin -->    
-                      <label class="col-md-3 control-label"> Product Image </label> 
-                      <div class="col-md-6"><!-- col-md-6 Begin -->
-                          <input name="product_img" type="file" class="form-control" required>
                       </div><!-- col-md-6 Finish -->
                    </div><!-- form-group Finish -->
 
