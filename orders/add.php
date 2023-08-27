@@ -4,17 +4,14 @@ if (!isset($_SESSION['can302'])) {
     echo "<script>window.open('login.php','_self')</script>";
 }
 elseif (isset($_POST['add'])) {
-	
-	$p_cat_name = $_POST['p_cat_name'];
-	$p_cat_amount = $_POST['p_cat_amount'];
-	$insert_p_cat = "insert ignore into product_category(name, amount)values('$p_cat_name','$p_cat_amount')";
-	$run_p_cat = mysqli_query($con,$insert_p_cat);
-	if ($run_p_cat) {
-		echo "<script>alert('Product category successfully added!')</script>";
-		echo "<script>window.open('index.php?category=view','_self')</script>";
-	}
-
-		
+    $p_cat_name = $_POST['p_cat_name'];
+    $p_cat_amount = $_POST['p_cat_amount'];
+    $insert_p_cat = "insert into order(name, amount)values('$p_cat_name','$p_cat_amount')";
+    $run_p_cat = mysqli_query($con,$insert_p_cat);
+    if ($run_p_cat) {
+        echo "<script>alert('One order successfully added!')</script>";
+        echo "<script>window.open('index.php?orders=view','_self')</script>";
+    }
 }
 else{	
 
@@ -25,8 +22,8 @@ else{
 	<div class="col-lg-12"><!-- col-lg-12 begin -->
 	
 		<ol class="breadcrumb">
-			<li> <i class="fa fa-tasks"></i> Product Categories</li>
-            <li>Add Product Category</li>
+			<li> <i class="fa fa-tasks"></i> Orders</li>
+            <li>Add Order</li>
 		</ol>
 
 	</div><!-- col-lg-12 finish -->
@@ -34,18 +31,17 @@ else{
 </div><!-- row finish -->
 
 <div class="row"><!-- row begin -->
-	
 	<div class="col-lg-12"><!-- col-lg-12 begin -->		
 		<div class="panel panel-default"><!-- panel panel-default begin -->			
 			<div class="panel-heading"><!-- panel-heading begin -->				
-				<h3 class="panel-title"> Add Product Category </h3>
+				<h3 class="panel-title"> Add Order </h3>
 			</div><!-- panel-heading finish -->
 			<div class="panel-body"><!-- panel-body begin -->				
 				<form method="post" class="form-horizontal">					
 					<div class="form-group"><!-- form-group begin -->						
-						<label class="control-label col-md-3">Name </label>
+						<label class="control-label col-md-3">Product ID </label>
 						<div class="col-md-6"><!-- col-md-6 begin -->							
-							<input type="text" name="p_cat_name" class="form-control">
+							<input type="text" name="o_name" class="form-control">
 						</div><!-- col-md-6 finish -->
 					</div><!-- form-group finish -->
 					<div class="form-group"><!-- form-group begin -->						

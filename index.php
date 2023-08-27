@@ -60,6 +60,9 @@ else{
                     $target = explode('#', $_GET['orders'])[0];
                     include("orders/$target.php");
                 }  
+                elseif (isset($_GET['profile'])) {
+                    include("includes/profile.php");
+                }  
                 ?>
                 
             </div><!-- container-fluid finish -->

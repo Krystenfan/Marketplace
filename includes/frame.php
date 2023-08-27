@@ -104,15 +104,7 @@ if (!isset($_SESSION['can302'])) {
                         <li>                            <!-- li begin -->
                             <a href="index.php?orders=view"> View Oders </a>
                         </li><!-- li finish -->
-                        <li>                            <!-- li begin -->
-                            <a href="index.php?orders=add"> Add Order  </a>
-                        </li><!-- li finish -->
-                        <li>                            <!-- li begin -->
-                            <a href="index.php?orders=edit"> Edit Orders </a>
-                        </li><!-- li finish -->
-                        <li>                            <!-- li begin -->
-                            <a href="index.php?orders=delete"> Delete Oders </a>
-                        </li><!-- li finish -->
+                        
                     </ul><!-- collapse finish -->
                 </li><!-- li finish -->
 
