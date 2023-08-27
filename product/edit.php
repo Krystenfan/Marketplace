@@ -11,15 +11,8 @@ elseif(isset($_POST['update'])){
     $product_price = $_POST['product_price'];
     $product_stock = $_POST['product_stock'];
     
-    //copy the image files to target folder.
-    $exts = explode('.', $_FILES['product_img']['name']);
-    $product_img_path = "/can302/media/".time().".".end($exts);
-    $temp_name = $_FILES['product_img']['tmp_name'];
-    $store_path = $_SERVER['DOCUMENT_ROOT'].$product_img_path;
-    move_uploaded_file($temp_name, $store_path);
-    
 
-    $update_product = "UPDATE product set cat_id='$product_cat_id', name='$product_name', description='$product_description', image_path='$product_img_path', price='$product_price', stock='$product_stock' where id='$product_id'";    
+    $update_product = "UPDATE product set cat_id='$product_cat_id', name='$product_name', description='$product_description', price='$product_price', stock='$product_stock' where id='$product_id'";    
     
     echo $update_product;
     $run_product = mysqli_query($con,$update_product);
@@ -44,7 +37,6 @@ else {
     $product_description = $row_edit['description'];
     $product_price = $row_edit['price'];
     $product_stock = $row_edit['stock'];
-    $product_image = $row_edit['image_path'];
 
 ?> 
     
@@ -95,13 +87,6 @@ else {
                       </div><!-- col-md-6 Finish -->
                    </div><!-- form-group Finish -->
                      
-                   <div class="form-group"><!-- form-group Begin -->
-                      <label class="col-md-3 control-label"> Product Image</label> 
-                      <div class="col-md-6"><!-- col-md-6 Begin -->
-                          <input name="product_img" type="file" class="form-control form-height-custom" required>
-                          <img src="<?php echo $product_image; ?>" width="150" height="150" alt="<?php echo $product_image; ?>">
-                      </div><!-- col-md-6 Finish -->
-                   </div><!-- form-group Finish -->
                    
                    <div class="form-group"><!-- form-group Begin -->
                       <label class="col-md-3 control-label"> Product Price </label> 

@@ -30,7 +30,6 @@ else{
 							<tr>
 								<th>ID</th>
 								<th>Name</th>
-								<th>Image</th>
 								<th>Price</th>
 								<th>Stock</th>
 								<th>Category</th>
@@ -49,14 +48,12 @@ else{
 									$pro_id = $row_pro['id'];
 									$pro_category = $row_pro['c_name'];
 									$pro_name = $row_pro['name'];
-									$pro_image = $row_pro['image_path'];
 									$pro_price = $row_pro['price'];
 									$pro_stock = $row_pro['stock'];
 							 ?>
 							 <tr>
                                  <td><?php echo $pro_id; ?></td>
                                  <td><?php echo $pro_name; ?></td>
-                                 <td><img src="<?php echo $pro_image; ?>" width="80" height="80"></td>
                                  <td><?php echo $pro_price; ?></td>
                                  <td><?php echo $pro_stock; ?></td>
                                  <td><?php echo $pro_category; ?></td>
