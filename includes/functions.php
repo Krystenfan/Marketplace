@@ -6,4 +6,9 @@ function mypost($str) {
     return $value;
 }       
 
+function simulatePayment() {
+    // Placeholder simulation of payment process
+    $randomSuccess = rand(0, 1); // Randomly generate success or failure
+    return $randomSuccess;
+}
 ?>

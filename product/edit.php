@@ -116,6 +116,7 @@ else {
                           <input type="hidden" name="product_id" class="form-control" value="<?php echo $edit_product_id; ?>" >
                       </div><!-- col-md-6 Finish -->
                    </div><!-- form-group Finish -->
+                   
                </form><!-- form-horizontal Finish -->
            </div><!-- panel-body Finish -->
         </div><!-- canel panel-default Finish -->

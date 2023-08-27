@@ -58,6 +58,10 @@ else{
                                  <td><?php echo $pro_stock; ?></td>
                                  <td><?php echo $pro_category; ?></td>
                                  <td>
+								    <a href="index.php?product=buy&id=<?php echo $pro_id; ?>">
+									<i class="fa fa-cubes"></i> Buy
+								    </a>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								    <a href="index.php?product=edit&id=<?php echo $pro_id; ?>">
 									<i class="fa fa-pencil"></i> Edit
 								    </a>
@@ -65,6 +69,7 @@ else{
 								    <a href="index.php?product=delete&id=<?php echo $pro_id; ?>">
 									<i class="fa fa-trash-o"></i> Delete
 								    </a>
+									
 								</td>
 							 </tr>
 							 <?php } ?>
