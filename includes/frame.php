@@ -15,7 +15,7 @@ if (!isset($_SESSION['can302'])) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button><!-- navbar-toggle finish -->
-            <a href="index.php?dashboard" class="navbar-brand">CAN302 Home</a>
+            <a href="index.php?dashboard" class="navbar-brand">Marketplace</a>
         </div><!-- navbar-header finish -->
         
         <ul class="nav navbar-right top-nav">   <!-- nav navbar-right top-nav begin -->
@@ -26,8 +26,8 @@ if (!isset($_SESSION['can302'])) {
 
                 <ul class="dropdown-menu">   <!-- dropdown-menu begin -->
                     <li> <!-- li begin -->
-                        <a href="#"> <!-- a href begin -->
-                            <i class="fa fa-fw fa-user"></i> Profile 
+                        <a href="index.php?profile&id=<?php echo $admin_id; ?>"> <!-- a href begin -->
+                            <i class="fa fa-fw fa-user"></i> Profile
                         </a>
                     </li><!-- li finish -->               
 
@@ -94,6 +94,7 @@ if (!isset($_SESSION['can302'])) {
                         <i class="fa fa-fw fa-users"></i> View Customers
                     </a><!-- a href finish -->
                 </li><!-- li finish -->
+                
 
                 <li>                    <!-- li begin -->
                     <a href="#" data-toggle="collapse" data-target="#orders">    <!-- a href begin -->

@@ -89,7 +89,14 @@ else{
 						<i class="fa fa-users fa-4x"></i>
 					</div><!-- col-xs-3 finish -->
 					<div class="col-xs-9 text-right"><!-- col-xs-9 text-right begin -->
-						<div class="huge">9999</div>
+                        <?php
+     
+                        $get_users = "SELECT * FROM users";
+                        $run_users = mysqli_query($con, $get_users);
+                        $count_users = mysqli_num_rows($run_users) -1 ;
+
+                        ?>
+						<div class="huge"><?php echo $count_users; ?></div>
 						<div>Customers</div>
 					</div><!-- col-xs-9 finish -->
 				</div><!-- row finish -->
@@ -114,12 +121,19 @@ else{
 						<i class="fa fa-shopping-cart fa-4x"></i>
 					</div><!-- col-xs-3 finish -->
 					<div class="col-xs-9 text-right"><!-- col-xs-9 text-right begin -->
-						<div class="huge">777</div>
+                        <?php
+     
+                        $get_orders = "SELECT * FROM orders";
+                        $run_orders = mysqli_query($con, $get_orders);
+                        $count_orders = mysqli_num_rows($run_orders);
+
+                        ?>
+						<div class="huge"><?php echo $count_orders; ?></div>
 						<div>Orders</div>
 					</div><!-- col-xs-9 finish -->
 				</div><!-- row finish -->
 			</div><!-- panel-heading finish -->
-			<a href="#">
+			<a href="index.php?orders=view">
 				<div class="panel-footer">
 					<span class="pull-left">View Details</span>
 					<span class="pull-right">
@@ -187,9 +201,7 @@ else{
 	<div class="col-md-4"><!-- col-md-4 begin -->	
         <?php
      
-        $admin_img = $row_admin['image_path'];
         $admin_email = $row_admin['email'];
-        $admin_image = $row_admin['image_path'];
         $admin_about = $row_admin['about'];
         $admin_phone = $row_admin['phone'];
         $admin_role = $row_admin['role'];
@@ -198,7 +210,6 @@ else{
         <div class="panel"><!-- panel begin -->			
 			<div class="panel-body"><!-- panel-body begin -->				
 				<div class="thumb-info"><!-- thumb-info begin -->
-					<img src="<?php echo $admin_image; ?>" alt="admin-thumb-info" class="rounded img-responsive">
 					<div class="thumb-info-title"><!-- thumb-info-title begin -->						
 						<span class="thumb-info-inner"> <?php echo $nickname; ?> </span>
 						<span class="thumb-info-type"> <?php echo $admin_role; ?> </span>
