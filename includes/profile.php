@@ -11,8 +11,8 @@ elseif(isset($_POST['update'])){
     $admin_about = $_POST['admin_about'];
     $admin_role = $_POST['admin_role'];    
     
-    $update_user = "UPDATE admin SET nickname='$admin_name', email='$admin_email', passwd='$admin_pass', about='$admin_about', phone='$admin_phone', role='$admin_role' where id='$admin_id'";
-    echo $update_user;
+    $update_user = "UPDATE users SET nickname='$admin_name', email='$admin_email', pwd='$admin_pass', about='$admin_about', phone='$admin_phone', role='$admin_role' where id='$admin_id'";
+    // echo $update_user;
     $run_user = mysqli_query($con,$update_user);
 
     if($run_user){        
