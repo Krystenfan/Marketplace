@@ -69,7 +69,7 @@ if (isset($_POST['login'])) {
     </div>
     <div class="col-lg-8" style="text-align:center"><!-- container begin -->
         <form action="" class="well" method="post"><!-- form begin -->
-            <h2 class="form-login-heading text-center"> Admin Login </h2>
+            <h2 class="form-login-heading text-center"> User Login </h2>
             <br>
             <input type="text" class="form-control" placeholder="Email Address" name="email" required>
             <br>

@@ -12,7 +12,7 @@ else{     //get the info of current admin user.
     $row_admin = mysqli_fetch_array($run_admin);
     $nickname = $row_admin['nickname'];
     $admin_id = $row_admin['id'];
-    $row = $row_admin['role'];
+    $role = $row_admin['role'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,6 +56,12 @@ else{     //get the info of current admin user.
                     $target = explode('#', $_GET['orders'])[0];
                     include("orders/$target.php");
                 }  
+                if (isset($_GET['customer'])) {
+                    include("includes/customer.php");
+                } 
+                elseif (isset($_GET['customer'])&& $role !="admin") {
+                    echo "<script>alert('You do not have this right!')</script>";
+                }
                 ?>
                 
             </div><!-- container-fluid finish -->

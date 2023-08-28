@@ -90,7 +90,7 @@ if (!isset($_SESSION['can302'])) {
                 
 
                 <li>                    <!-- li begin -->
-                    <a href="#">                        <!-- a href begin -->
+                    <a href="index.php?customer">                        <!-- a href begin -->
                         <i class="fa fa-fw fa-users"></i> View Customers
                     </a><!-- a href finish -->
                 </li><!-- li finish -->
