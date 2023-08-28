@@ -19,8 +19,8 @@ if (isset($_POST['Create'])) {
         }
         else{
             $role = mysqli_real_escape_string($con,$_POST['role']);
-            if($_POST['role']!='shop owner'&&$_POST['role']!='customer'){
-                echo "<script>alert('Please input valid role!')</script>";
+            if($_POST['role']!='admin'&&$_POST['role']!='customer'){
+                echo "<script>alert('Please input valid role: admin or customer!')</script>";
             }
             else{
                 $gender = mysqli_real_escape_string($con,$_POST['gender']);

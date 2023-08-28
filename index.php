@@ -1,21 +1,18 @@
 <?php
-
 session_start(); //key statement to check session.
 include("includes/db.php");
 //check the login status. Redirect the un-login users to login page.
 if (!isset($_SESSION['can302'])) {
     echo "<script>window.open('login.php','_self')</script>";
 }
-else{ 
-    //get the info of current admin user.
+else{     //get the info of current admin user.
     $admin = $_SESSION['can302'];
     $get_admin = "select * from users where email='$admin'";
     $run_admin = mysqli_query($con,$get_admin);
     $row_admin = mysqli_fetch_array($run_admin);
     $nickname = $row_admin['nickname'];
-    $role = $row_admin['role'];
-    $id = $row_admin['id'];
-
+    $admin_id = $row_admin['id'];
+    $row = $row_admin['role'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,10 +42,9 @@ else{
                     $target = explode('#', $_GET['category'])[0];
                     include("category/$target.php");
                 }  
-                elseif (isset($_GET['register'])) {
-                    echo "dd";
-                    include("register.php");
-                }
+                elseif (isset($_GET['profile'])) {
+                    include("includes/profile.php");
+                }  
                 elseif (isset($_GET['product']) && $role == "admin") {
                     $target = explode('#', $_GET['product'])[0];
                     include("product/$target.php");
@@ -59,9 +55,6 @@ else{
                 elseif (isset($_GET['orders'])) {
                     $target = explode('#', $_GET['orders'])[0];
                     include("orders/$target.php");
-                }  
-                elseif (isset($_GET['profile'])) {
-                    include("includes/profile.php");
                 }  
                 ?>
                 
