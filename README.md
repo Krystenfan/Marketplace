@@ -28,7 +28,7 @@ Welcome to the **Marketplace Platform**, a comprehensive solution for managing p
 
 ### Convenient Dashboard
 The platform boasts a user-friendly dashboard that offers a visual representation of product and customer statistics. Additionally, a low-stock product table is available, allowing users to quickly assess product stock levels.
-![Database Structure](media\dashboard.png)
+![Database Structure](media/dashboard.png)
 
 You can find the appearances of other website pages in the "media" folder, including the Product Details page, User Profile page, and Order Confirmation page.
 
@@ -38,7 +38,7 @@ For enhanced security, the platform utilizes RSA encryption to protect password 
 ### Database Structure
 The platform's database comprises four essential tables, each serving a specific purpose. The relationships between these tables are carefully designed to facilitate smooth interactions and efficient data management.
 
-![Dashboard Overview](media\dbStructure.png)
+![Dashboard Overview](media/dbStructure.png)
 
 
 
